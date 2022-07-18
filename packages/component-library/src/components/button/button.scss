@@ -1,0 +1,17 @@
+.button-component {
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+
+.button-component-primary {
+  color: var(--special-text-color);
+  background-color: var(--special-color);
+}
+
+.button-component-secondary {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}

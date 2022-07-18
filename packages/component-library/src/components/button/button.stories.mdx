@@ -1,0 +1,40 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import Props from './readme.md'
+
+<Meta title="Web Components Library/Demos/Button"/>
+
+<Props/>
+
+export const PrimaryButton = (args) => `<component-button type="primary" text="${args.buttonText}"></component-button>`;
+
+## Button
+
+This is a button from this component library with different examples of a state.
+This demo also showcases documentation of this component library and how each component can be used.
+
+### Primary button
+
+A fine example of our primary button
+
+<Story
+  name="Primary"
+  args={{
+    buttonText: 'Click me'
+  }}>
+  {PrimaryButton.bind({})}
+</Story>
+
+
+export const SecondaryButton = (args) => `<component-button text="${args.buttonText}"></component-button>`;
+
+### Secondary button
+
+A fine example of our secondary button
+
+<Story
+  name="Secondary"
+  args={{
+    buttonText: 'Click me'
+  }}>
+  {SecondaryButton.bind({})}
+</Story>
