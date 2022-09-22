@@ -16,6 +16,20 @@ export namespace Components {
          */
         "type": string;
     }
+    interface ComponentInput {
+        /**
+          * Type of this input field it can be email, number, text, password etc.
+         */
+        "inputType": string;
+        /**
+          * Text for the label that shows above input field
+         */
+        "labelText": string;
+        /**
+          * Text that is used as a placeholder for the input field
+         */
+        "placeholderText": string;
+    }
 }
 declare global {
     interface HTMLComponentButtonElement extends Components.ComponentButton, HTMLStencilElement {
@@ -24,8 +38,15 @@ declare global {
         prototype: HTMLComponentButtonElement;
         new (): HTMLComponentButtonElement;
     };
+    interface HTMLComponentInputElement extends Components.ComponentInput, HTMLStencilElement {
+    }
+    var HTMLComponentInputElement: {
+        prototype: HTMLComponentInputElement;
+        new (): HTMLComponentInputElement;
+    };
     interface HTMLElementTagNameMap {
         "component-button": HTMLComponentButtonElement;
+        "component-input": HTMLComponentInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -39,8 +60,23 @@ declare namespace LocalJSX {
          */
         "type"?: string;
     }
+    interface ComponentInput {
+        /**
+          * Type of this input field it can be email, number, text, password etc.
+         */
+        "inputType"?: string;
+        /**
+          * Text for the label that shows above input field
+         */
+        "labelText"?: string;
+        /**
+          * Text that is used as a placeholder for the input field
+         */
+        "placeholderText"?: string;
+    }
     interface IntrinsicElements {
         "component-button": ComponentButton;
+        "component-input": ComponentInput;
     }
 }
 export { LocalJSX as JSX };
@@ -48,6 +84,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "component-button": LocalJSX.ComponentButton & JSXBase.HTMLAttributes<HTMLComponentButtonElement>;
+            "component-input": LocalJSX.ComponentInput & JSXBase.HTMLAttributes<HTMLComponentInputElement>;
         }
     }
 }

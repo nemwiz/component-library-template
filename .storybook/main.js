@@ -12,7 +12,8 @@ module.exports = {
             options: {
                 transcludeMarkdown: true
             }
-        }
+        },
+        'storybook-addon-themes',
     ],
     "framework": "@storybook/html",
     "core": {

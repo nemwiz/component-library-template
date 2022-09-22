@@ -1,129 +1,21 @@
-:host {
-  --bg-color: rgba(255, 255, 255, 1);
-  --text-color: rgba(37, 49, 68, 1);
-  --text-soft-color: rgba(67, 74, 89, 1);
-  --text-strong-color: rgba(74, 74, 74, 1);
-  --subtle-color: rgba(247, 249, 254, 1);
-  --border-color: rgba(222, 231, 250, 1);
-  --shadow-color: rgba(173, 192, 228, 1);
-  --input-color: rgba(255, 255, 255, 1);
-  --outline-color: rgba(167, 194, 243, 1);
-  --mark-color: rgba(43, 133, 221, 0.08);
-  --special-color: rgba(43, 133, 221, 1);
-  --special-bg-color: rgba(44, 137, 227, 1);
-  --special-text-color: rgba(255, 255, 255, 1);
-  --special-shadow-color: rgba(75, 93, 123, 1);
-  --special-mark-color: rgba(255, 255, 255, 0.08);
-  --light-color: rgba(239, 244, 254, 1);
-  --dark-color: rgba(57, 71, 95, 1);
-  --text-color-rgb: 37, 49, 68;
-  --bg-color-rgb: 255, 255, 255;
-  --subtle-color-rgb: 247, 249, 254;
-  --special-color-rgb: 43, 133, 221;
-  --special-text-color-rgb: 255, 255, 255;
-  --special-bg-color-rgb: 44, 137, 227;
-  --shadow-color-rgb: 173, 192, 228;
-  --special-shadow-color-rgb: 75, 93, 123;
-  --outline-color-rgb: 167, 194, 243;
-  --dark-color-rgb: 57, 71, 95;
-  --light-color-rgb: 239, 244, 254;
+.theme-light {
+  --background-color: #fff;
+  --primary-color: #2e8555;
+  --secondary-color: #852E5E;
+  --primary-text-color: #fff;
+  --secondary-text-color: #121212;
+
+  background-color: var(--background-color);
+  font-family: Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :host {
-    --bg-color: rgba(32, 32, 32, 1);
-    --text-color: rgba(220, 223, 230, 1);
-    --text-soft-color: rgba(184, 187, 195, 1);
-    --text-strong-color: rgba(187, 187, 187, 1);
-    --subtle-color: rgba(33, 36, 43, 1);
-    --border-color: rgba(40, 49, 64, 1);
-    --shadow-color: rgba(0, 0, 0, 1);
-    --input-color: rgba(28, 28, 28, 1);
-    --outline-color: rgba(117, 160, 224, 1);
-    --mark-color: rgba(73, 141, 221, 0.08);
-    --special-color: rgba(73, 141, 221, 1);
-    --special-bg-color: rgba(50, 100, 159, 1);
-    --special-text-color: rgba(220, 223, 230, 1);
-    --special-shadow-color: rgba(23, 31, 43, 1);
-    --special-mark-color: rgba(220, 223, 230, 0.08);
-    --light-color: rgba(195, 212, 247, 1);
-    --dark-color: rgba(41, 53, 73, 1);
-    --text-color-rgb: 220, 223, 230;
-    --bg-color-rgb: 32, 32, 32;
-    --subtle-color-rgb: 33, 36, 43;
-    --special-color-rgb: 73, 141, 221;
-    --special-text-color-rgb: 220, 223, 230;
-    --special-bg-color-rgb: 50, 100, 159;
-    --shadow-color-rgb: 0, 0, 0;
-    --special-shadow-color-rgb: 23, 31, 43;
-    --outline-color-rgb: 117, 160, 224;
-    --dark-color-rgb: 41, 53, 73;
-    --light-color-rgb: 195, 212, 247;
-  }
-}
+.theme-dark {
+  --background-color: #121212;
+  --primary-color: #25c2a0;
+  --secondary-color: #dea0c2;
+  --primary-text-color: #121212;
+  --secondary-text-color: #fff;
 
-@media (prefers-color-scheme: light) and (prefers-contrast: more) {
-  :host {
-    --bg-color: rgba(255, 255, 255, 1);
-    --text-color: rgba(24, 32, 47, 1);
-    --text-soft-color: rgba(28, 32, 40, 1);
-    --text-strong-color: rgba(74, 74, 74, 1);
-    --subtle-color: rgba(247, 249, 254, 1);
-    --border-color: rgba(167, 182, 211, 1);
-    --shadow-color: rgba(139, 157, 189, 1);
-    --input-color: rgba(255, 255, 255, 1);
-    --outline-color: rgba(139, 178, 240, 1);
-    --mark-color: rgba(31, 102, 171, 0.16);
-    --special-color: rgba(31, 102, 171, 1);
-    --special-bg-color: rgba(32, 106, 177, 1);
-    --special-text-color: rgba(255, 255, 255, 1);
-    --special-shadow-color: rgba(29, 37, 52, 1);
-    --special-mark-color: rgba(255, 255, 255, 0.16);
-    --light-color: rgba(239, 244, 254, 1);
-    --dark-color: rgba(57, 71, 95, 1);
-    --text-color-rgb: 24, 32, 47;
-    --bg-color-rgb: 255, 255, 255;
-    --subtle-color-rgb: 247, 249, 254;
-    --special-color-rgb: 31, 102, 171;
-    --special-text-color-rgb: 255, 255, 255;
-    --special-bg-color-rgb: 32, 106, 177;
-    --shadow-color-rgb: 139, 157, 189;
-    --special-shadow-color-rgb: 29, 37, 52;
-    --outline-color-rgb: 139, 178, 240;
-    --dark-color-rgb: 57, 71, 95;
-    --light-color-rgb: 239, 244, 254;
-  }
-}
-
-@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
-  :host {
-    --bg-color: rgba(32, 32, 32, 1);
-    --text-color: rgba(238, 239, 242, 1);
-    --text-soft-color: rgba(238, 239, 241, 1);
-    --text-strong-color: rgba(187, 187, 187, 1);
-    --subtle-color: rgba(33, 36, 43, 1);
-    --border-color: rgba(75, 81, 93, 1);
-    --shadow-color: rgba(0, 0, 0, 1);
-    --input-color: rgba(28, 28, 28, 1);
-    --outline-color: rgba(112, 157, 223, 1);
-    --mark-color: rgba(136, 176, 239, 0.16);
-    --special-color: rgba(136, 176, 239, 1);
-    --special-bg-color: rgba(39, 81, 130, 1);
-    --special-text-color: rgba(238, 239, 242, 1);
-    --special-shadow-color: rgba(0, 0, 0, 1);
-    --special-mark-color: rgba(238, 239, 242, 0.16);
-    --light-color: rgba(218, 228, 250, 1);
-    --dark-color: rgba(41, 53, 73, 1);
-    --text-color-rgb: 238, 239, 242;
-    --bg-color-rgb: 32, 32, 32;
-    --subtle-color-rgb: 33, 36, 43;
-    --special-color-rgb: 136, 176, 239;
-    --special-text-color-rgb: 238, 239, 242;
-    --special-bg-color-rgb: 39, 81, 130;
-    --shadow-color-rgb: 0, 0, 0;
-    --special-shadow-color-rgb: 0, 0, 0;
-    --outline-color-rgb: 112, 157, 223;
-    --dark-color-rgb: 41, 53, 73;
-    --light-color-rgb: 218, 228, 250;
-  }
+  background-color: var(--background-color);
+  font-family: Roboto, sans-serif;
 }

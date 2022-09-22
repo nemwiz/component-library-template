@@ -4,7 +4,7 @@
   "description": "Mono-repo for web components library project",
   "main": "index.js",
   "scripts": {
-    "test": "lerna run test --stream",
+    "test": "lerna run test --stream --scope @company/component-library",
     "start": "lerna run start --stream --parallel",
     "start:consumer:apps": "lerna run start --stream --parallel --scope @company/react-consumer-app --scope @company/angular-consumer-app",
     "start:component:library": "lerna run start --stream --parallel --scope @company/component-library",
@@ -37,7 +37,8 @@
     "babel-loader": "^8.2.5",
     "commitlint": "^17.0.3",
     "husky": "^8.0.0",
-    "lerna": "^5.1.6"
+    "lerna": "^5.1.6",
+    "storybook-addon-themes": "^6.1.0"
   },
   "workspaces": [
     "packages/*"

@@ -1,0 +1,39 @@
+import {Meta, Story} from '@storybook/addon-docs';
+import Props from './readme.md'
+
+<Meta title="Web Components Library/Demos/Input"/>
+
+<Props/>
+
+export const Email = (args) => `<component-input label-text="${args.labelText}" placeholder-text="${args.placeholderText}"></component-input>`;
+
+## Input
+
+### Email input
+
+This is a simple input field with type email. Validation is not provided.
+
+<Story
+  name="Email"
+  args={{
+    labelText: 'Email',
+    placeholderText: 'john.doe@gmail.com'
+  }}>
+  {Email.bind({})}
+</Story>
+
+export const Password = (args) => `<component-input label-text="${args.labelText}" placeholder-text="${args.placeholderText}"
+input-type="password"></component-input>`;
+
+### Password
+
+This is a simple input field with type of password. The text is masked when typed in.
+
+<Story
+  name="Password"
+  args={{
+    labelText: 'Password',
+    placeholderText: ''
+  }}>
+  {Password.bind({})}
+</Story>

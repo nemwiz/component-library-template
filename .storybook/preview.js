@@ -12,4 +12,16 @@ export const parameters = {
             date: /Date$/,
         },
     },
+    backgrounds: {
+        disable: true,
+        values: []
+    },
+    themes: {
+        default: 'light',
+        clearable: false,
+        list: [
+            {name: 'light', class: 'theme-light', color: '#fff'},
+            {name: 'dark', class: 'theme-dark', color: '#121212'}
+        ],
+    }
 }
