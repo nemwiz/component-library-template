@@ -25,14 +25,17 @@ export class Input {
 
   @State() isFocused = false;
 
+  @State() value = '';
+
   render() {
     return (
       <div class={`input-component ${this.isFocused ? 'focused' : ''}`}>
         <label htmlFor={'input-field'}>{this.labelText}</label>
         <input type={this.inputType} id={'input-field'} class={'input-field'}
+               onInput={(event) => this.value = (event.target as HTMLInputElement).value}
                onFocusin={() => this.isFocused = true}
                onFocusout={() => this.isFocused = false}/>
-        <p class={'hovering-label-container hovering-label'}>{this.placeholderText}</p>
+        {this.value === '' ? <p class={'hovering-label-container hovering-label'}>{this.placeholderText}</p> : null}
       </div>
     )
   }
