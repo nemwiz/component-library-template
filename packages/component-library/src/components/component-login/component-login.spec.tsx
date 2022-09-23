@@ -14,7 +14,7 @@ describe('component-login', () => {
       html: `<component-login></component-login>`,
     });
 
-    const loginButton = page.root.querySelectorAll('[data-test-id=loginButton]')[0] as HTMLButtonElement;
+    const loginButton = page.root.querySelectorAll('[data-testid=loginButton]')[0] as HTMLButtonElement;
     loginButton.click();
     await page.waitForChanges();
 

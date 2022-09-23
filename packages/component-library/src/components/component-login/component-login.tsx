@@ -27,9 +27,9 @@ export class ComponentLogin {
           </div> : null}
         {this.isLoading || this.isLoggedIn ? null :
           <div class={'component-login'}>
-            <component-input label-text="Email" placeholder-text="john.doe@email.com" input-id="1"></component-input>
-            <component-input label-text="Password" input-type="password" input-id="2"></component-input>
-            <component-button data-test-id={'loginButton'}
+            <component-input label-text="Email" placeholder-text="john.doe@email.com" input-id="email-input"></component-input>
+            <component-input label-text="Password" input-type="password" input-id="password-input"></component-input>
+            <component-button data-testid={'loginButton'}
                               text="Log in"
                               type="primary"
                               onClick={() => this.logInUser()}></component-button>

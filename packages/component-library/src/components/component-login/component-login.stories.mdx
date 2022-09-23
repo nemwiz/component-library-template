@@ -1,4 +1,6 @@
 import {Meta, Story, Source} from '@storybook/addon-docs';
+import {waitFor, within, userEvent} from '@storybook/testing-library';
+import {expect} from '@storybook/jest';
 import Props from './readme.md';
 
 <Meta title="Screens/Login"/>
@@ -7,7 +9,21 @@ import Props from './readme.md';
 
 export const LoginStory = () => `<component-login></component-login>`;
 
-<Story name="Login" args={{}}>
+<Story name="Login" args={{}}
+       play={async ({canvasElement}) => {
+         const canvas = within(canvasElement);
+         const emailInput = await canvas.findByTestId('email-input');
+         await userEvent.type(emailInput, 'test@email.com', {delay: 100});
+         const passwordInput = await canvas.findByTestId('password-input');
+         await userEvent.type(passwordInput, 'secretpassword123', {delay: 100});
+         const loginButton = await canvas.findByTestId('loginButton');
+         await userEvent.click(loginButton);
+         await waitFor(() => {
+           expect(canvas.getByText('Congratulations! You are now logged in.')).toBeInTheDocument()
+         }, {
+           timeout: 10000
+         });
+       }}>
   {LoginStory.bind({})}
 </Story>
 

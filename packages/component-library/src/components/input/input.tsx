@@ -37,7 +37,7 @@ export class Input {
     return (
       <div class={`input-component ${this.isFocused ? 'focused' : ''}`}>
         <label htmlFor={this.inputId}>{this.labelText}</label>
-        <input type={this.inputType} id={this.inputId} class={'input-field'}
+        <input type={this.inputType} id={this.inputId} class={'input-field'} data-testid={this.inputId}
                onInput={(event) => this.value = (event.target as HTMLInputElement).value}
                onFocusin={() => this.isFocused = true}
                onFocusout={() => this.isFocused = false}/>
