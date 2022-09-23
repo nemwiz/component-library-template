@@ -18,6 +18,10 @@ export namespace Components {
     }
     interface ComponentInput {
         /**
+          * Unique id for this input field
+         */
+        "inputId": string;
+        /**
           * Type of this input field it can be email, number, text, password etc.
          */
         "inputType": string;
@@ -29,6 +33,10 @@ export namespace Components {
           * Text that is used as a placeholder for the input field
          */
         "placeholderText": string;
+    }
+    interface ComponentLogin {
+    }
+    interface ComponentSpinner {
     }
 }
 declare global {
@@ -44,9 +52,23 @@ declare global {
         prototype: HTMLComponentInputElement;
         new (): HTMLComponentInputElement;
     };
+    interface HTMLComponentLoginElement extends Components.ComponentLogin, HTMLStencilElement {
+    }
+    var HTMLComponentLoginElement: {
+        prototype: HTMLComponentLoginElement;
+        new (): HTMLComponentLoginElement;
+    };
+    interface HTMLComponentSpinnerElement extends Components.ComponentSpinner, HTMLStencilElement {
+    }
+    var HTMLComponentSpinnerElement: {
+        prototype: HTMLComponentSpinnerElement;
+        new (): HTMLComponentSpinnerElement;
+    };
     interface HTMLElementTagNameMap {
         "component-button": HTMLComponentButtonElement;
         "component-input": HTMLComponentInputElement;
+        "component-login": HTMLComponentLoginElement;
+        "component-spinner": HTMLComponentSpinnerElement;
     }
 }
 declare namespace LocalJSX {
@@ -62,6 +84,10 @@ declare namespace LocalJSX {
     }
     interface ComponentInput {
         /**
+          * Unique id for this input field
+         */
+        "inputId"?: string;
+        /**
           * Type of this input field it can be email, number, text, password etc.
          */
         "inputType"?: string;
@@ -74,9 +100,15 @@ declare namespace LocalJSX {
          */
         "placeholderText"?: string;
     }
+    interface ComponentLogin {
+    }
+    interface ComponentSpinner {
+    }
     interface IntrinsicElements {
         "component-button": ComponentButton;
         "component-input": ComponentInput;
+        "component-login": ComponentLogin;
+        "component-spinner": ComponentSpinner;
     }
 }
 export { LocalJSX as JSX };
@@ -85,6 +117,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "component-button": LocalJSX.ComponentButton & JSXBase.HTMLAttributes<HTMLComponentButtonElement>;
             "component-input": LocalJSX.ComponentInput & JSXBase.HTMLAttributes<HTMLComponentInputElement>;
+            "component-login": LocalJSX.ComponentLogin & JSXBase.HTMLAttributes<HTMLComponentLoginElement>;
+            "component-spinner": LocalJSX.ComponentSpinner & JSXBase.HTMLAttributes<HTMLComponentSpinnerElement>;
         }
     }
 }

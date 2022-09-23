@@ -1,0 +1,14 @@
+import {Meta, Story, Source} from '@storybook/addon-docs';
+import Props from './readme.md';
+
+<Meta title="Screens/Login"/>
+
+<Props/>
+
+export const LoginStory = () => `<component-login></component-login>`;
+
+<Story name="Login" args={{}}>
+  {LoginStory.bind({})}
+</Story>
+
+<Source id={'screens-login--login'} dark/>

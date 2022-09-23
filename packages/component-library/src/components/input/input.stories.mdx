@@ -1,11 +1,11 @@
-import {Meta, Story} from '@storybook/addon-docs';
+import {Meta, Source, Story} from '@storybook/addon-docs';
 import Props from './readme.md'
 
 <Meta title="Web Components Library/Demos/Input"/>
 
 <Props/>
 
-export const Email = (args) => `<component-input label-text="${args.labelText}" placeholder-text="${args.placeholderText}"></component-input>`;
+export const Email = (args) => `<component-input label-text="${args.labelText}" placeholder-text="${args.placeholderText}" input-id="1"></component-input>`;
 
 ## Input
 
@@ -22,8 +22,10 @@ This is a simple input field with type email. Validation is not provided.
   {Email.bind({})}
 </Story>
 
+<Source id={'web-components-library-demos-input--email'} dark/>
+
 export const Password = (args) => `<component-input label-text="${args.labelText}" placeholder-text="${args.placeholderText}"
-input-type="password"></component-input>`;
+input-type="password" input-id="2"></component-input>`;
 
 ### Password
 
@@ -37,3 +39,5 @@ This is a simple input field with type of password. The text is masked when type
   }}>
   {Password.bind({})}
 </Story>
+
+<Source id={'web-components-library-demos-input--password'} dark/>

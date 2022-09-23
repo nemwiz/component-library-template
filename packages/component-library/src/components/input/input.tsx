@@ -6,6 +6,12 @@ import {Component, Prop, h, State} from '@stencil/core';
   shadow: false,
 })
 export class Input {
+
+  /**
+   * Unique id for this input field
+   */
+  @Prop() inputId: string;
+
   /**
    * Text for the label that shows above input field
    */
@@ -30,8 +36,8 @@ export class Input {
   render() {
     return (
       <div class={`input-component ${this.isFocused ? 'focused' : ''}`}>
-        <label htmlFor={'input-field'}>{this.labelText}</label>
-        <input type={this.inputType} id={'input-field'} class={'input-field'}
+        <label htmlFor={this.inputId}>{this.labelText}</label>
+        <input type={this.inputType} id={this.inputId} class={'input-field'}
                onInput={(event) => this.value = (event.target as HTMLInputElement).value}
                onFocusin={() => this.isFocused = true}
                onFocusout={() => this.isFocused = false}/>

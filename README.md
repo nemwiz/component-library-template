@@ -75,6 +75,12 @@ Run consumer apps to check for intergration
 yarn start:consumer:apps
 ```
 
+## Creating new components
+
+To reduce the effort and minimize errors, there is a handy shell script that will generate a boilerplate component and story.
+
+`./generate-component.sh my-new-component-name`
+
 ## Commit convention
 
 We follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).

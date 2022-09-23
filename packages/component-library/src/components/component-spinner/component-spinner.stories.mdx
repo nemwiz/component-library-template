@@ -1,0 +1,14 @@
+import {Meta, Story, Source} from '@storybook/addon-docs';
+import Props from './readme.md';
+
+<Meta title="Web Components Library/Demos/Spinner"/>
+
+<Props/>
+
+export const SpinnerStory = () => `<component-spinner></component-spinner>`;
+
+<Story name="Spinner" args={{}}>
+  {SpinnerStory.bind({})}
+</Story>
+
+<Source id={'web-components-library-demos-spinner--spinner'} dark/>
