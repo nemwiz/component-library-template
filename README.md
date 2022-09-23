@@ -81,6 +81,35 @@ To reduce the effort and minimize errors, there is a handy shell script that wil
 
 `./generate-component.sh my-new-component-name`
 
+## Testing 
+
+This template repo has set up for 2 types of testing unit and interaction testing.
+
+For unit tests, run the following command `yarn test`.
+
+You can find some examples of units tests inside `component-login.spec.tsx`
+
+We also leverage (Storybook interaction test)[https://storybook.js.org/docs/react/writing-tests/interaction-testing]
+to perform UI testing. To run these tests, open 2 terminals and execute the following commands:
+
+- `yarn storybook`
+- `yarn test-storybook`
+
+An example test is available in `component-login.stories.mdx`.
+
+In order to run these tests as a part of the CI pipeline, the recommended practice is to use Docker.
+The command `test-storybook-ci` is already provided in this repo. Here is an example stage for Gitlab CI
+
+```yaml
+testing:
+  stage: testing
+  image: mcr.microsoft.com/playwright:v1.24.0-focal
+  script:
+    - yarn install
+    - yarn test
+    - yarn test-storybook:ci
+```
+
 ## Commit convention
 
 We follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
